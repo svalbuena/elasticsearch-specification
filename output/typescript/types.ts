@@ -2988,10 +2988,12 @@ export interface AggregationsAggregationContainer {
   variable_width_histogram?: AggregationsVariableWidthHistogramAggregation
 }
 
-export interface AggregationsAggregationRange {
-  from?: double
+export type AggregationsAggregationRange = AggregationsUntypedAggregationRange | AggregationsNumberAggregationRange | AggregationsStringAggregationRange
+
+export interface AggregationsAggregationRangeBase<T = unknown> {
+  from?: T
   key?: string
-  to?: double
+  to?: T
 }
 
 export interface AggregationsArrayPercentilesItem {
@@ -3811,6 +3813,9 @@ export interface AggregationsNormalizeAggregation extends AggregationsPipelineAg
 
 export type AggregationsNormalizeMethod = 'rescale_0_1' | 'rescale_0_100' | 'percent_of_sum' | 'mean' | 'z-score' | 'softmax'
 
+export interface AggregationsNumberAggregationRange extends AggregationsAggregationRangeBase<double> {
+}
+
 export interface AggregationsParentAggregateKeys extends AggregationsSingleBucketAggregateBase {
 }
 export type AggregationsParentAggregate = AggregationsParentAggregateKeys
@@ -4063,6 +4068,9 @@ export interface AggregationsStatsBucketAggregate extends AggregationsStatsAggre
 export interface AggregationsStatsBucketAggregation extends AggregationsPipelineAggregationBase {
 }
 
+export interface AggregationsStringAggregationRange extends AggregationsAggregationRangeBase<string> {
+}
+
 export interface AggregationsStringRareTermsAggregate extends AggregationsMultiBucketAggregateBase<AggregationsStringRareTermsBucket> {
 }
 
@@ -4228,6 +4236,9 @@ export interface AggregationsUnmappedSignificantTermsAggregate extends Aggregati
 }
 
 export interface AggregationsUnmappedTermsAggregate extends AggregationsTermsAggregateBase<SpecUtilsVoid> {
+}
+
+export interface AggregationsUntypedAggregationRange extends AggregationsAggregationRangeBase<any> {
 }
 
 export interface AggregationsValueCountAggregate extends AggregationsSingleMetricAggregateBase {
