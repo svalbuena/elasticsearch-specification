@@ -62,10 +62,13 @@ export default class Compiler {
       this.model = await step(this.model, this.jsonSpec, this.errors)
     }
 
+    // We manually sort the object keys => disable sort
+    const nonDeterministicStringify = stringify.configure({ deterministic: false })
+
     await mkdir(join(this.outputFolder, 'schema'), { recursive: true })
     await writeFile(
       join(this.outputFolder, 'schema', 'schema.json'),
-      stringify(this.model, null, 2),
+      nonDeterministicStringify(this.model, null, 2),
       'utf8'
     )
 

@@ -156,6 +156,9 @@ export function compileSpecification (endpointMappings: Record<string, model.End
     model.types.push(modelTypeAlias(declaration))
   }
 
+  // Sort object keys in alphabetical order and ensure that the discriminator key always comes first
+  model.types = model.types.map(x => sortObjectKeys(x, 'kind'))
+
   // Sort the types in alphabetical order
   sortTypeDefinitions(model.types)
 
@@ -584,4 +587,19 @@ function visitRequestOrResponseProperty (member: PropertyDeclaration | PropertyS
   }
 
   return { name, properties, valueOf }
+}
+
+function sortObjectKeys (type: any, discriminator: string): any {
+  const keys = Object.keys(type).sort((a, b) => a.localeCompare(b))
+
+  const result = {}
+
+  result[discriminator] = type[discriminator]
+  keys.forEach(key => {
+    if (key !== discriminator) {
+      result[key] = type[key]
+    }
+  })
+
+  return result
 }
