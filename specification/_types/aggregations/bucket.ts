@@ -284,7 +284,7 @@ export class DateRangeAggregation extends BucketAggregationBase {
   /**
    * Array of date ranges.
    */
-  ranges?: DateRangeExpression[]
+  ranges?: DateAggregationRange[]
   /**
    * Time zone used to convert dates from another time zone to UTC.
    */
@@ -293,30 +293,6 @@ export class DateRangeAggregation extends BucketAggregationBase {
    * Set to `true` to associate a unique string key with each bucket and returns the ranges as a hash rather than an array.
    */
   keyed?: boolean
-}
-
-/**
- * A date range limit, represented either as a DateMath expression or a number expressed
- * according to the target field's precision.
- *
- * @codegen_names expr, value
- */
-// ES: DateRangeAggregationBuilder.innerBuild()
-export type FieldDateMath = DateMath | double
-
-export class DateRangeExpression {
-  /**
-   * Start of the range (inclusive).
-   */
-  from?: FieldDateMath
-  /**
-   * Custom key to return the range with.
-   */
-  key?: string
-  /**
-   * End of the range (exclusive).
-   */
-  to?: FieldDateMath
 }
 
 export class DiversifiedSamplerAggregation extends BucketAggregationBase {
@@ -672,13 +648,14 @@ export class RangeAggregation extends BucketAggregationBase {
 }
 
 /**
- * @codegen_names untyped, number, string
+ * @codegen_names untyped, date, number, term
  * @variants untagged untyped=_types.aggregations.UntypedAggregationRange
  */
 export type AggregationRange =
   | UntypedAggregationRange
+  | DateAggregationRange
   | NumberAggregationRange
-  | StringAggregationRange
+  | TermAggregationRange
 
 export class AggregationRangeBase<T> {
   /**
@@ -697,9 +674,20 @@ export class AggregationRangeBase<T> {
 
 export class NumberAggregationRange extends AggregationRangeBase<double> {}
 
-export class StringAggregationRange extends AggregationRangeBase<string> {}
+export class TermAggregationRange extends AggregationRangeBase<string> {}
 
 export class UntypedAggregationRange extends AggregationRangeBase<UserDefinedValue> {}
+
+export class DateAggregationRange extends AggregationRangeBase<FieldDateMath> {}
+
+/**
+ * A date range limit, represented either as a DateMath expression or a number expressed
+ * according to the target field's precision.
+ *
+ * @codegen_names expr, value
+ */
+// ES: DateRangeAggregationBuilder.innerBuild()
+export type FieldDateMath = DateMath | double
 
 export class RareTermsAggregation extends BucketAggregationBase {
   /**
