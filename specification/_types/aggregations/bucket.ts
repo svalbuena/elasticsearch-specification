@@ -648,15 +648,13 @@ export class RangeAggregation extends BucketAggregationBase {
 }
 
 /**
- * @codegen_names untyped, date, number, term
+ * @codegen_names untyped, date, number
  * @variants untagged untyped=_types.aggregations.UntypedAggregationRange
  */
 export type AggregationRange =
   | UntypedAggregationRange
   | DateAggregationRange
   | NumberAggregationRange
-  | TermAggregationRange
-
 export class AggregationRangeBase<T> {
   /**
    * Start of the range (inclusive).
@@ -673,8 +671,6 @@ export class AggregationRangeBase<T> {
 }
 
 export class NumberAggregationRange extends AggregationRangeBase<double> {}
-
-export class TermAggregationRange extends AggregationRangeBase<string> {}
 
 export class UntypedAggregationRange extends AggregationRangeBase<UserDefinedValue> {}
 
