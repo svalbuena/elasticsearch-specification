@@ -2988,7 +2988,7 @@ export interface AggregationsAggregationContainer {
   variable_width_histogram?: AggregationsVariableWidthHistogramAggregation
 }
 
-export type AggregationsAggregationRange = AggregationsUntypedAggregationRange | AggregationsDateAggregationRange | AggregationsNumberAggregationRange
+export type AggregationsAggregationRange = AggregationsUntypedAggregationRange | AggregationsDateAggregationRange | AggregationsNumberAggregationRange | AggregationsTermAggregationRange
 
 export interface AggregationsAggregationRangeBase<T = unknown> {
   from?: T
@@ -4130,6 +4130,9 @@ export interface AggregationsTTestAggregation {
 }
 
 export type AggregationsTTestType = 'paired' | 'homoscedastic' | 'heteroscedastic'
+
+export interface AggregationsTermAggregationRange extends AggregationsAggregationRangeBase<string> {
+}
 
 export interface AggregationsTermsAggregateBase<TBucket = unknown> extends AggregationsMultiBucketAggregateBase<TBucket> {
   doc_count_error_upper_bound?: long

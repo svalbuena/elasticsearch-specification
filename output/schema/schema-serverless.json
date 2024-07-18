@@ -60529,7 +60529,7 @@
           }
         }
       ],
-      "specLocation": "_types/aggregations/bucket.ts#L1044-L1108"
+      "specLocation": "_types/aggregations/bucket.ts#L1048-L1112"
     },
     {
       "codegenNames": [
@@ -60541,7 +60541,7 @@
         "name": "CategorizeTextAnalyzer",
         "namespace": "_types.aggregations"
       },
-      "specLocation": "_types/aggregations/bucket.ts#L1110-L1113",
+      "specLocation": "_types/aggregations/bucket.ts#L1114-L1117",
       "type": {
         "items": [
           {
@@ -60609,7 +60609,7 @@
           }
         }
       ],
-      "specLocation": "_types/aggregations/bucket.ts#L1115-L1119"
+      "specLocation": "_types/aggregations/bucket.ts#L1119-L1123"
     },
     {
       "inherits": {
@@ -61483,7 +61483,7 @@
         "name": "AggregateOrder",
         "namespace": "_types.aggregations"
       },
-      "specLocation": "_types/aggregations/bucket.ts#L982-L984",
+      "specLocation": "_types/aggregations/bucket.ts#L986-L988",
       "type": {
         "items": [
           {
@@ -61642,7 +61642,7 @@
         "namespace": "_types.aggregations"
       },
       "properties": [],
-      "specLocation": "_types/aggregations/bucket.ts#L677-L677"
+      "specLocation": "_types/aggregations/bucket.ts#L681-L681"
     },
     {
       "generics": [
@@ -61694,7 +61694,7 @@
           }
         }
       ],
-      "specLocation": "_types/aggregations/bucket.ts#L658-L671"
+      "specLocation": "_types/aggregations/bucket.ts#L660-L673"
     },
     {
       "inherits": {
@@ -61941,7 +61941,7 @@
           }
         }
       ],
-      "specLocation": "_types/aggregations/bucket.ts#L1166-L1190"
+      "specLocation": "_types/aggregations/bucket.ts#L1170-L1194"
     },
     {
       "kind": "interface",
@@ -61986,7 +61986,7 @@
           }
         }
       ],
-      "specLocation": "_types/aggregations/bucket.ts#L1152-L1164"
+      "specLocation": "_types/aggregations/bucket.ts#L1156-L1168"
     },
     {
       "codegenNames": [
@@ -61998,7 +61998,7 @@
         "name": "TermsExclude",
         "namespace": "_types.aggregations"
       },
-      "specLocation": "_types/aggregations/bucket.ts#L1007-L1008",
+      "specLocation": "_types/aggregations/bucket.ts#L1011-L1012",
       "type": {
         "items": [
           {
@@ -62033,7 +62033,7 @@
         "name": "TermsInclude",
         "namespace": "_types.aggregations"
       },
-      "specLocation": "_types/aggregations/bucket.ts#L1004-L1005",
+      "specLocation": "_types/aggregations/bucket.ts#L1008-L1009",
       "type": {
         "items": [
           {
@@ -62096,7 +62096,7 @@
           }
         }
       ],
-      "specLocation": "_types/aggregations/bucket.ts#L1010-L1019"
+      "specLocation": "_types/aggregations/bucket.ts#L1014-L1023"
     },
     {
       "inherits": {
@@ -62377,14 +62377,15 @@
       "codegenNames": [
         "untyped",
         "date",
-        "number"
+        "number",
+        "term"
       ],
       "kind": "type_alias",
       "name": {
         "name": "AggregationRange",
         "namespace": "_types.aggregations"
       },
-      "specLocation": "_types/aggregations/bucket.ts#L650-L657",
+      "specLocation": "_types/aggregations/bucket.ts#L650-L658",
       "type": {
         "items": [
           {
@@ -62405,6 +62406,13 @@
             "kind": "instance_of",
             "type": {
               "name": "NumberAggregationRange",
+              "namespace": "_types.aggregations"
+            }
+          },
+          {
+            "kind": "instance_of",
+            "type": {
+              "name": "TermAggregationRange",
               "namespace": "_types.aggregations"
             }
           }
@@ -62437,7 +62445,7 @@
         "namespace": "_types.aggregations"
       },
       "properties": [],
-      "specLocation": "_types/aggregations/bucket.ts#L675-L675"
+      "specLocation": "_types/aggregations/bucket.ts#L679-L679"
     },
     {
       "inherits": {
@@ -62461,7 +62469,31 @@
         "namespace": "_types.aggregations"
       },
       "properties": [],
-      "specLocation": "_types/aggregations/bucket.ts#L673-L673"
+      "specLocation": "_types/aggregations/bucket.ts#L675-L675"
+    },
+    {
+      "inherits": {
+        "generics": [
+          {
+            "kind": "instance_of",
+            "type": {
+              "name": "string",
+              "namespace": "_builtins"
+            }
+          }
+        ],
+        "type": {
+          "name": "AggregationRangeBase",
+          "namespace": "_types.aggregations"
+        }
+      },
+      "kind": "interface",
+      "name": {
+        "name": "TermAggregationRange",
+        "namespace": "_types.aggregations"
+      },
+      "properties": [],
+      "specLocation": "_types/aggregations/bucket.ts#L677-L677"
     },
     {
       "inherits": {
@@ -63242,7 +63274,7 @@
           }
         }
       ],
-      "specLocation": "_types/aggregations/bucket.ts#L1121-L1150"
+      "specLocation": "_types/aggregations/bucket.ts#L1125-L1154"
     },
     {
       "inherits": {
@@ -64313,7 +64345,7 @@
         "name": "TermsAggregationCollectMode",
         "namespace": "_types.aggregations"
       },
-      "specLocation": "_types/aggregations/bucket.ts#L986-L995"
+      "specLocation": "_types/aggregations/bucket.ts#L990-L999"
     },
     {
       "kind": "interface",
@@ -64879,7 +64911,7 @@
           }
         }
       ],
-      "specLocation": "_types/aggregations/bucket.ts#L688-L718"
+      "specLocation": "_types/aggregations/bucket.ts#L692-L722"
     },
     {
       "inherits": {
@@ -64966,7 +64998,7 @@
           }
         }
       ],
-      "specLocation": "_types/aggregations/bucket.ts#L720-L726"
+      "specLocation": "_types/aggregations/bucket.ts#L724-L730"
     },
     {
       "inherits": {
@@ -64995,7 +65027,7 @@
           }
         }
       ],
-      "specLocation": "_types/aggregations/bucket.ts#L728-L734"
+      "specLocation": "_types/aggregations/bucket.ts#L732-L738"
     },
     {
       "inherits": {
@@ -65303,7 +65335,7 @@
           }
         }
       ],
-      "specLocation": "_types/aggregations/bucket.ts#L771-L835"
+      "specLocation": "_types/aggregations/bucket.ts#L775-L839"
     },
     {
       "kind": "interface",
@@ -65337,7 +65369,7 @@
           }
         }
       ],
-      "specLocation": "_types/aggregations/bucket.ts#L736-L745"
+      "specLocation": "_types/aggregations/bucket.ts#L740-L749"
     },
     {
       "kind": "enum",
@@ -65359,7 +65391,7 @@
         "name": "TermsAggregationExecutionHint",
         "namespace": "_types.aggregations"
       },
-      "specLocation": "_types/aggregations/bucket.ts#L997-L1002"
+      "specLocation": "_types/aggregations/bucket.ts#L1001-L1006"
     },
     {
       "kind": "interface",
@@ -65381,7 +65413,7 @@
           }
         }
       ],
-      "specLocation": "_types/aggregations/bucket.ts#L747-L752"
+      "specLocation": "_types/aggregations/bucket.ts#L751-L756"
     },
     {
       "kind": "interface",
@@ -65415,7 +65447,7 @@
           }
         }
       ],
-      "specLocation": "_types/aggregations/bucket.ts#L754-L763"
+      "specLocation": "_types/aggregations/bucket.ts#L758-L767"
     },
     {
       "kind": "interface",
@@ -65424,7 +65456,7 @@
         "namespace": "_types.aggregations"
       },
       "properties": [],
-      "specLocation": "_types/aggregations/bucket.ts#L765-L765"
+      "specLocation": "_types/aggregations/bucket.ts#L769-L769"
     },
     {
       "kind": "interface",
@@ -65445,7 +65477,7 @@
           }
         }
       ],
-      "specLocation": "_types/aggregations/bucket.ts#L767-L769"
+      "specLocation": "_types/aggregations/bucket.ts#L771-L773"
     },
     {
       "inherits": {
@@ -65666,7 +65698,7 @@
           }
         }
       ],
-      "specLocation": "_types/aggregations/bucket.ts#L837-L909"
+      "specLocation": "_types/aggregations/bucket.ts#L841-L913"
     },
     {
       "inherits": {
@@ -65973,7 +66005,7 @@
           }
         }
       ],
-      "specLocation": "_types/aggregations/bucket.ts#L911-L976"
+      "specLocation": "_types/aggregations/bucket.ts#L915-L980"
     },
     {
       "inherits": {
@@ -66597,7 +66629,7 @@
           }
         }
       ],
-      "specLocation": "_types/aggregations/bucket.ts#L1021-L1042"
+      "specLocation": "_types/aggregations/bucket.ts#L1025-L1046"
     },
     {
       "kind": "interface",
@@ -77427,7 +77459,7 @@
         "name": "FieldDateMath",
         "namespace": "_types.aggregations"
       },
-      "specLocation": "_types/aggregations/bucket.ts#L679-L686",
+      "specLocation": "_types/aggregations/bucket.ts#L683-L690",
       "type": {
         "items": [
           {
